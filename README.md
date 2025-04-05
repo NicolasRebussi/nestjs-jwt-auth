@@ -2,6 +2,18 @@
 Este é um projeto de API de autenticação com JWT desenvolvida em NestJS usando Prisma ORM e MySQL como banco de dados.
 Ideal para aprender como proteger rotas, cadastrar e autenticar usuários com segurança usando bcrypt e JSON Web Tokens.
 
+🧠 Objetivo
+Este projeto tem fins educativos. Estou aprendendo NestJS e os principais conceitos de autenticação com JWT.
+A intenção é evoluir o projeto com novas funcionalidades, como:
+
+Refresh Tokens
+
+Rotas protegidas com Guards
+
+Perfis de usuários (admin, user)
+
+Testes automatizados
+
 # 🔐 NestJS JWT Auth API
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
