@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model curso {
+  id              Int      @id @default(autoincrement())
+  nome            String   @db.VarChar(255)
+  universidade_id String   @db.VarChar(255)
+  endereco_id     Int
+  datacriacao     DateTime @default(now()) @db.Timestamp(0)
+  dataatualizacao DateTime @default(now()) @db.Timestamp(0)
+}
+
+model endereco {
+  id              Int      @id @default(autoincrement())
+  cep             String   @db.VarChar(255)
+  cidade          String   @db.VarChar(255)
+  uf              String?  @db.VarChar(255)
+  logradouro      String?  @db.VarChar(255)
+  bairro          String   @db.VarChar(255)
+  numero          String?  @db.VarChar(255)
+  complemento     String   @db.VarChar(255)
+  datacriacao     DateTime @default(now()) @db.Timestamp(0)
+  dataatualizacao DateTime @default(now()) @db.Timestamp(0)
+}
+
+model universidade {
+  id              Int      @id @default(autoincrement())
+  razao           String   @db.VarChar(255)
+  fantasia        String   @db.VarChar(255)
+  endereco_id     Int
+  datacriacao     DateTime @default(now()) @db.Timestamp(0)
+  dataatualizacao DateTime @default(now()) @db.Timestamp(0)
+}
+
+model usuario {
+  id              Int      @id @default(autoincrement())
+  nome            String   @db.VarChar(255)
+  email           String   @unique @db.VarChar(255)
+  password        String   @db.VarChar(255)
+  datacriacao     DateTime @default(now()) @db.Timestamp(0)
+  dataatualizacao DateTime @default(now()) @db.Timestamp(0)
+}
